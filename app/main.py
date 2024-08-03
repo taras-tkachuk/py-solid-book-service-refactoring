@@ -37,8 +37,7 @@ def main(book: Book, commands: list[tuple[str, str]]) -> None | str:
             strategy = serialize_strategies.get(method_type)
             if strategy:
                 return strategy.serialize(book.title, book.content)
-            else:
-                raise ValueError(f"Unknown serialize type: {method_type}")
+            raise ValueError(f"Unknown serialize type: {method_type}")
 
 
 if __name__ == "__main__":
